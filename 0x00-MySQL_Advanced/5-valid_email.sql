@@ -5,7 +5,7 @@ CREATE TRIGGER resets_attribute_valid_email
 BEFORE UPDATE ON users
 FOR EACH ROW
 BEGIN
-    IF OLD.valid_email != NEW.valid_email THEN
+    IF OLD.email != NEW.email THEN
         SET NEW.valid_email = FALSE;
     END IF;
 END$$
