@@ -3,6 +3,7 @@
 DELIMITER $$;
 CREATE  PROCEDURE ComputeAverageScoreForUser(user_id int)
 BEGIN
+    UPDATE users
     SELECT AVG(scores) AS average_score
     FROM scores
     WHERE user_id = user_id
