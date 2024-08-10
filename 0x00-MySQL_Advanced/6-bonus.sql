@@ -7,6 +7,6 @@ IF NOT EXISTS (SELECT 1 FROM projects WHERE name = project_name) THEN
 END IF;
 INSERT INTO corrections (user_id, project_name, score)
 VALUES (user_id, project_id, score);
-END$$
+END;$$
 DELIMITER ;
 -- poiuytrewq321#@
