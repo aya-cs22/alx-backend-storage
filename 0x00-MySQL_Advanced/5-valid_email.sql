@@ -9,7 +9,7 @@ BEGIN
         -- UPDATE users
         -- SET valid_email = NEW.valid_email
         -- WHERE id = OLD.id;
-        valid_email =false
+        valid_email =FALSE;
     END IF;
 END$$
 DELIMITER ;
