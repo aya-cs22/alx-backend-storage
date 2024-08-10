@@ -1,6 +1,6 @@
 -- a SQL script that creates a stored procedure AddBonus that adds a new correction for a student.
-DELIMITER $$ ;
-CREATE PROCEDURE AddBonus (user_id INT, project_name VARCHAR(255), score INT)
+DELIMITER $$;
+CREATE PROCEDURE AddBonus (user_id int, project_name varchar(255), score int)
 BEGIN
     IF NOT EXISTS (SELECT name FROM projects WHERE name = project_name) THEN
         INSERT INTO projects (name) VALUES (project_name);
