@@ -3,10 +3,10 @@ DELIMITER $$
 CREATE FUNCTION SafeDiv(a INT, b INT)
 RETURNS FLOAT DETERMINISTIC
 BEGIN
-IF (B == 0) THEN
-    RETURN 0
-ELSE
-    RETURN a / B
+    IF  b = 0 THEN
+        RETURN 0
+    ELSE
+        RETURN a / b
     END IF;
 END$$
 
