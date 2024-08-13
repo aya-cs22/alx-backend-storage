@@ -70,10 +70,6 @@ $ python3
 '3.10.1'
 
 
-## Contact
-
-For any questions or inquiries, please contact me at [your-email@example.com](mailto:your-email@example.com).
-
 ---
 
 Happy learning and exploring NoSQL databases!
