@@ -8,7 +8,8 @@ if __name__ == "__main__":
     db = client.logs.nginx
 
     # number of documents in this collection
-    total_logs = collection.count_documents({})
+    # total_logs = collection.count_documents({})
+    total_logs = db.count_documents({})
     print(f"{total_logs} logs\n")
     print("Methods:\n")
     # number of documents with the method
