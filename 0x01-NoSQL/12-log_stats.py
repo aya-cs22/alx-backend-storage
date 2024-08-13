@@ -9,8 +9,9 @@ if __name__ == "__main__":
 
     # number of documents in this collection
     # total_logs = collection.count_documents({})
-    total_logs = db.count_documents({})
-    print(f"{total_logs} logs")
+
+    num_logs = db.count_documents({})
+    print(f"{num_logs} logs")
 
     get = db.count_documents({'method': 'GET'})
     post = db.count_documents({'method': 'POST'})
