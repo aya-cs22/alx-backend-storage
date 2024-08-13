@@ -13,10 +13,23 @@ if __name__ == "__main__":
     print(f"{total_logs} logs\n")
     print("Methods:\n")
     # number of documents with the method
-    methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
-    for method in methods:
-        # method_count = collection.count_documents({'method': method})
-        method_count = db.count_documents({'method': method})
-        print(f"\tmethod {'method'}: {method_count}")
+    # methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
+    # for method in methods:
+    #     # method_count = collection.count_documents({'method': method})
+    #     method_count = db.count_documents({'method': method})
+    #     print(f"\tmethod {'method'}: {method_count}")
+    get = db.count_documents({'method': 'GET'})
+    post = db.count_documents({'method': 'POST'})
+    put = db.count_documents({'method': 'PUT'})
+    patch = db.count_documents({'method': 'PATCH'})
+    delete = db.count_documents({'method': 'DELETE'})
+
+    print("Methods:")
+    print(f"\tmethod GET: {get}")
+    print(f"\tmethod POST: {post}")
+    print(f"\tmethod PUT: {put}")
+    print(f"\tmethod PATCH: {patch}")
+    print(f"\tmethod DELETE: {delete}")
     status = db.count_documents({'method': 'GET', 'path': '/status'})
     print(f"{status} status check")
+
