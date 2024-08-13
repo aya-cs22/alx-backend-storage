@@ -19,14 +19,14 @@ By the end of this project, you should be able to:
 
 Refer to the following resources to enhance your understanding:
 
-- [NoSQL Databases Explained](#)
+- [NoSQL Databases Explained](https://riak.com/resources/nosql-databases/)
 - [What is NoSQL?](#)
-- [MongoDB with Python Crash Course - Tutorial for Beginners](#)
-- [MongoDB Tutorial 2: Insert, Update, Remove, Query](#)
-- [Aggregation](#)
-- [Introduction to MongoDB and Python](#)
-- [mongo Shell Methods](#)
-- [Mongosh](#)
+- [MongoDB with Python Crash Course - Tutorial for Beginners](https://www.youtube.com/watch?v=qUV2j3XBRHc)
+- [MongoDB Tutorial 2: Insert, Update, Remove, Query](https://www.youtube.com/watch?v=E-1xI85Zog8)
+- [Aggregation](https://www.mongodb.com/docs/manual/aggregation/)
+- [Introduction to MongoDB and Python](https://realpython.com/introduction-to-mongodb-and-python/)
+- [mongo Shell Methods](https://www.mongodb.com/docs/manual/reference/method/)
+- [Mongosh](https://www.mongodb.com/docs/mongodb-shell/#mongodb-binary-bin.mongosh)
 
 ## Requirements
 
