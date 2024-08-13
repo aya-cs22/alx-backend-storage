@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
+"""Log stats module"""
 from pymongo import MongoClient
-# client = MongoClient('mongodb://localhost:27017/')
-# db = client['logs']
-# collection = db['nginx']
+
+
 if __name__ == "__main__":
     client = MongoClient('mongodb://127.0.0.1:27017')
     db = client.logs.nginx
-
-    # number of documents in this collection
-    # total_logs = collection.count_documents({})
 
     num_logs = db.count_documents({})
     print(f"{num_logs} logs")
