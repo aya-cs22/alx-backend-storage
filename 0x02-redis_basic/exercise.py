@@ -18,15 +18,16 @@ class Cache():
         if not (value):
             return None
 
+        if fn is not None:
+            return fn(value)
+        
         try:
             return value.decode('utf-8')
         except AttributeError:
             return value
 
-        if fn is not None:
-            return fn(value)
+
         
-        return value
         
     def get_str(self, key: str) -> str:
         return self.get(key, lambda d: d.decode('utf-8'))
