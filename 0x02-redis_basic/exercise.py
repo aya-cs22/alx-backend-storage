@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import redis
 import uuid
-from typing import Union, Optional, Callable, Any
+from typing import Union, Optional, Callable
 class Cache():
     def __init__(self):
         self._redis = redis.Redis()
@@ -18,30 +18,17 @@ class Cache():
         if not (value):
             return None
 
-        value = value.decode('utf-8')
+        # value = value.decode('utf-8')
 
         if fn is not None:
             return fn(value)
         
         return value
         
-    # def get_str(self, key: str) -> str:
-    #     return self.get(key, lambda d: d.decode('utf-8'))
+    def get_str(self, key: str) -> str:
+        return self.get(key, lambda d: d.decode('utf-8'))
 
-    # def get_int(self, key: int) -> int:
-    #     return self.get(key, int)
-    def get_str(self, data: Any) -> str:
-        '''convert data to string'''
-        try:
-            return str(data)
-        except:
-            return data
-
-    def get_int(self, data: Any) -> int:
-        '''convert data to integer'''
-        try:
-            return int(data)
-        except:
-            return data
+    def get_int(self, key: int) -> int:
+        return self.get(key, int)
 
 
