@@ -2,9 +2,9 @@
 import redis
 import uuid
 from typing import Union
-class Cache:
+class Cache():
     def __init__(self):
-        self._redis = redis
+        self._redis = redis.Redis()
         self._redis.flushdb()
 
     def store(self, data: Union[str, bytes, int, float]) -> str:
@@ -12,3 +12,5 @@ class Cache:
         self._redis.set(random_uuid_key, data)
         # random_uuid = self._redis.get(random_uuid_key, data)
         return random_uuid_key
+
+    
