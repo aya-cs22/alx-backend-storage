@@ -18,7 +18,10 @@ class Cache():
         if not (value):
             return None
 
-        value = value.decode('utf-8')
+        try:
+            return value.decode('utf-8')
+        except AttributeError:
+            return value
 
         if fn is not None:
             return fn(value)
