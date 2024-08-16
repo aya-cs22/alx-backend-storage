@@ -2,6 +2,15 @@
 import redis
 import uuid
 from typing import Union, Optional, Callable
+import functools
+
+def count_calls(method: Callable) -> Callable:
+    key = method.__qualname__
+    @functools.wraps(method)
+    def wrapper(self, *args, **kwargs):
+        self._redias.incr(key)
+        return method(self, *args, **kwargs)
+    return wrapper
 class Cache():
     def __init__(self):
         self._redis = redis.Redis()
@@ -17,14 +26,11 @@ class Cache():
         value = self._redis.get(key)
         if not (value):
             return None
-
         # value = value.decode('utf-8')
-
         if fn is not None:
             return fn(value)
-        
         return value
-        
+
     def get_str(self, key: str) -> str:
         return self.get(key, lambda d: d.decode('utf-8'))
 
