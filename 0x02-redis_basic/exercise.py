@@ -36,6 +36,7 @@ class Cache():
 
     @count_calls
     @call_history
+    @replay
     def store(self, data: Union[str, bytes, int, float]) -> str:
         random_uuid_key = str(uuid.uuid4())
         self._redis.set(random_uuid_key, data)
