@@ -24,11 +24,13 @@ def call_history(method: Callable) -> Callable:
         return result
     return wrapper
 
-def replay(self ,method):
-    input_key = f"{method.__qualname__}:inputs"
-    output_key = f"{method.__qualname__}:outputs"
-    count = self.get(method.__qualname__).decode("utf-8")
-    print(f"{method.__qualname__} was called {count} times:")
+def replay(self, method):
+    '''display the history of calls of a particular function.'''
+    qualname = method.__qualname__
+    input_key = qualname + ":inputs"
+    output_key = qualname + ":outputs"
+    count = self.get(qualname).decode("utf-8")
+    print(f"{qualname} was called {count} times:")
 class Cache():
     def __init__(self):
         self._redis = redis.Redis()
